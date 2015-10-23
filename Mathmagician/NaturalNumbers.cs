@@ -11,15 +11,17 @@ namespace Mathmagician
     {
 
         protected int first;
+        protected int increment;
 
         public NaturalNumbers()
         {
             first = 1;
+            increment = 1;
         }
 
         public virtual int GetNext(int x)
         {
-            return x+1;
+            return x+increment;
         }
 
         public int GetFirst()
