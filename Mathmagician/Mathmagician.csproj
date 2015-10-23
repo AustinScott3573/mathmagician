@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Even.cs" />
+    <Compile Include="Fib.cs" />
+    <Compile Include="Integers.cs" />
+    <Compile Include="Odd.cs" />
+    <Compile Include="Primes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
