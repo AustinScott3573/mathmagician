@@ -8,14 +8,14 @@ namespace MathmagicianTests
     public class EvenTest
     {
         [TestMethod]
-        public void EnsuerICanCreateClassInstance()
+        public void EvenEnsuerICanCreateClassInstance()
         {
             EvenNumbers even = new EvenNumbers();
             Assert.IsNotNull(even);
         }
 
         [TestMethod]
-        public void ShouldPrintFirstNumber()
+        public void EvenShouldPrintFirstNumber()
         {
             EvenNumbers even = new EvenNumbers();
             int expected = 2;
@@ -24,7 +24,7 @@ namespace MathmagicianTests
         }
 
         [TestMethod]
-        public void ShouldPrintNextNumber()
+        public void EvenShouldPrintNextNumber()
         {
             EvenNumbers even = new EvenNumbers();
             int input = 2;
@@ -34,7 +34,7 @@ namespace MathmagicianTests
         }
 
         [TestMethod]
-        public void PrintOfSequenceOfNumbers()
+        public void EvenPrintOfSequenceOfNumbers()
         {
             EvenNumbers even = new EvenNumbers();
             int length = 8;
@@ -44,7 +44,7 @@ namespace MathmagicianTests
         }
 
         [TestMethod]
-        public void ShouldPrintAVariableSequenceOfNumbers()
+        public void EvenShouldPrintAVariableSequenceOfNumbers()
         {
             EvenNumbers nats = new EvenNumbers();
             int input = 8;
