@@ -10,41 +10,106 @@ namespace Mathmagician
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What would you like for me to do?");
-
-            string userWants = Console.ReadLine().ToLower();
-
-            Console.WriteLine("How many should I print?");
-
-            int userInput = Int32.Parse(Console.ReadLine());
-
-            if (userWants == "integers" || userWants == "primes" || userWants == "fibonacci" || userWants == "even" || userWants == "odd")
+            string prompt = "> ";
+            Console.WriteLine("What do you want me to do?");
+            Console.Write(prompt);
+            string response = Console.ReadLine();
+            if (response.Equals("natural numbers"))
             {
-                if (userWants == "integers")
+                Console.WriteLine("How many?");
+                Console.Write(prompt);
+                string response_length = Console.ReadLine();
+                int length;
+                bool parsed = int.TryParse(response_length, out length);
+                if (parsed)
                 {
-                    Integers.PrintListOfInt(userInput);
+                    NaturalNumbers nats = new NaturalNumbers();
+                    Console.WriteLine(nats.ToString(nats.GetSequence(length)));
                 }
-                if (userWants == "primes")
+                else
                 {
-                    Primes.PrintListOfPrimes(userInput);
+                    Console.WriteLine("Whoops!");
                 }
-                if (userWants == "fibonacci")
+
+            }
+            else if (response.Equals("even numbers"))
+            {
+                Console.WriteLine("How many?");
+                Console.Write(prompt);
+                string response_length = Console.ReadLine();
+                int length;
+                bool parsed = int.TryParse(response_length, out length);
+                if (parsed)
                 {
-                    Fib.PrintFib(userInput);
+                    EvenNumbers even = new EvenNumbers();
+                    Console.WriteLine(even.ToString(even.GetSequence(length)));
                 }
-                if (userWants == "even")
+                else
                 {
-                    Even.PrintEvens(userInput);
+                    Console.WriteLine("Whoops!");
                 }
-                if (userWants == "odd")
+
+            }
+            else if (response.Equals("odd numbers"))
+            {
+                Console.WriteLine("How many?");
+                Console.Write(prompt);
+                string response_length = Console.ReadLine();
+                int length;
+                bool parsed = int.TryParse(response_length, out length);
+                if (parsed)
                 {
-                    Odd.PrintOdds(userInput);
+                    OddNumbers odd = new OddNumbers();
+                    Console.WriteLine(odd.ToString(odd.GetSequence(length)));
                 }
+                else
+                {
+                    Console.WriteLine("Whoops!");
+                }
+
+            }
+            else if (response.Equals("fibonacci numbers"))
+            {
+                Console.WriteLine("How many?");
+                Console.Write(prompt);
+                string response_length = Console.ReadLine();
+                int length;
+                bool parsed = int.TryParse(response_length, out length);
+                if (parsed)
+                {
+                    FibonacciNumbers fibonacci = new FibonacciNumbers();
+                    Console.WriteLine(fibonacci.ToString(fibonacci.GetSequence(length)));
+                }
+                else
+                {
+                    Console.WriteLine("Whoops!");
+                }
+
+            }
+            else if (response.Equals("prime numbers"))
+            {
+                Console.WriteLine("How many?");
+                Console.Write(prompt);
+                string response_length = Console.ReadLine();
+                int length;
+                bool parsed = int.TryParse(response_length, out length);
+                if (parsed)
+                {
+                    PrimeNumbers primes = new PrimeNumbers();
+                    Console.WriteLine(primes.ToString(primes.GetSequence(length)));
+                }
+                else
+                {
+                    Console.WriteLine("Whoops!");
+                }
+
             }
             else
             {
-                Console.WriteLine("WHOOPS!");
+                Console.WriteLine("Nope! Do better next time.");
             }
+            Console.WriteLine("Press any key to exit..");
+            Console.ReadKey();
         }
     }
 }

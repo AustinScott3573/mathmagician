@@ -86,14 +86,6 @@ namespace MathmagicianTests
             CollectionAssert.AreEqual(sequenceNoLength, sequenceWithLength);
         }
 
-        [TestMethod]
-        public void PrintOfSequenceOfNumbers()
-        {
-            NaturalNumbers nats = new NaturalNumbers();
-            int length = 7;
-            string expected = "1 2 3 4 5 6 7";
-            string actual = nats.ToString(nats.GetSequence(length));
-            Assert.AreEqual(expected, actual);
-        }
+        
     }
 }

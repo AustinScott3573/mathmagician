@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Mathmagician
 {
-    class Primes
+    public class PrimeNumbers : NaturalNumbers
     {
+        public PrimeNumbers()
+        {
+            first = 2;
+        }
+
         public static bool CheckIfPrime(int num)
         {
             if (num == 1)
@@ -24,22 +29,22 @@ namespace Mathmagician
                     return false;
             }
             return true;
-        } 
-        
-        public static void PrintListOfPrimes(int num)
-        {
-            int count = 0;
-            int count2 = 0;
+        }
 
-            while (count != num)
+        public override int GetNext(int x)
+        {
+            int nextNumber = x + 1;
+            while (true)
             {
-                if(CheckIfPrime(count2))
+                if (CheckIfPrime(nextNumber))
                 {
-                    Console.WriteLine(count2);
-                    count++;
+                    return nextNumber;
                 }
-                count2++;
+                else
+                {
+                    nextNumber++;
+                }
             }
-        }  
+        }
     }
 }
